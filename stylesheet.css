@@ -78,6 +78,20 @@ header {
     to { opacity: 1; }
 }
 
+/* Action buttons add, sort */
+.action-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.movie-input {
+    padding: 10px 20px;
+}
+
+
+
 /* Popcorn buttons (footer controls) */
 .controls {
     margin-top: 40px;

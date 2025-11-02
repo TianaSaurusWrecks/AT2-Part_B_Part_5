@@ -136,11 +136,13 @@ function showAddMovie() {
         input.className = "movie-input";
         output.appendChild(input);
         output.appendChild(document.createElement("br"));
+
     });
 
     const button = document.createElement("button");
     button.textContent = "Add Movie";
     output.appendChild(button);
+    button.className = "action-btn";
 
     // handle Submit
     button.onclick = () => {
@@ -198,10 +200,12 @@ function showSearchMovie() {
     input.id = "searchInput";
     input.placeholder = "Enter Movie ID or Title";
     output.appendChild(input);
+    input.className = "movie-input";
 
     const searchBtn = document.createElement("button");
     searchBtn.textContent = "Search";
     output.appendChild(searchBtn);
+    searchBtn.className = "action-btn";
 
     const resultsDiv = document.createElement("div");
     resultsDiv.id = "searchResults";
@@ -249,12 +253,15 @@ function showSortMovie() {
 
     const sortAZ = document.createElement("button");
     sortAZ.textContent = "Sort A - Z";
+    sortAZ.className = "action-btn";
 
     const sortZA = document.createElement("button");
     sortZA.textContent = "Sort Z - A";
+    sortZA.className = "action-btn";
 
     const sortBest = document.createElement("button");
     sortBest.textContent = "Best Movies";
+    sortBest.className = "action-btn";
 
     output.appendChild(sortAZ);
     output.appendChild(sortZA);
