@@ -292,8 +292,61 @@ function showSortMovie() {
     };
 }
 
+// Delete Movie Section
+function showDeleteMovie() {
+    output.textContent = "";
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Delete a Movie";
+    output.appendChild(heading);
+
+    const input = document.createElement("input");
+    input.id = "deleteInput";
+    input.placeholder = "Enter Movie ID or Title to Delete";
+    input.className = "movie-input";
+    output.appendChild(input);
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.className = "action-btn";
+    output.appendChild(deleteBtn);
+
+    deleteBtn.onclick = () => {
+        const query = input.value.trim();
+        if (!query) {
+            alert("Please enter a movie ID or title");
+            return;
+        }
+
+        const beforeCount = movieList.movies.length;
+        movieList.movies = movieList.movies.filter(
+            m => m.movieID.toString() !== query &&
+            !m.title.toLowerCase().includes(query.toLowerCase())
+        );
+
+        const afterCount = movieList.movies.length;
+
+        if (afterCount < beforeCount) {
+            alert("Movie deleted successfully!");
+        }
+        else {
+            alert("No matching movie found");
+        }
+
+        displayMovies(mmovieList.getAll(), "Updated Movie List");
+
+        };
+    }
+
+
 // Event Listeners for main buttons
 document.getElementById("addMovieBtn").onclick = showAddMovie;
 document.getElementById("displayMoviesBtn").onclick = showDisplayMovies;
 document.getElementById("searchMoviesBtn").onclick = showSearchMovie;
 document.getElementById("sortMoviesBtn").onclick = showSortMovie;
+document.getElementById("deleteMovieBtn").onclick = showDeleteMovie;
+
+// Display Movie List on Start
+window.onload = () => {
+    displayMovies(movieList.getAll(), "Movie List");
+}

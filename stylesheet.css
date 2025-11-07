@@ -21,9 +21,9 @@ header {
     color: #111;
     width: 100%;
     text-align: center;
-    padding: 20px 0;
+    padding: 5px 0;
     font-family: "Limelight", sans-serif;
-    font-size: 38px;
+    font-size: 26px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -38,19 +38,20 @@ header {
     height: 800px;
     max-width: 1600px;
     min-height: 400px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* border-radius: 10px; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 /* Screen Area Overlay */
 .screen {
     width: 40%;
-    height: 65%;
+    height: 55%;
     background-color: rgba(255, 255, 255, 0.85);
     color: #000;
     border-radius: 10px;
@@ -94,11 +95,16 @@ header {
 
 /* Popcorn buttons (footer controls) */
 .controls {
-    margin-top: 40px;
+    position: absolute;
+    bottom: 11%;
+
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
+    z-index: 10;
+    
 }
 
 .controls button {
@@ -115,10 +121,16 @@ header {
     width: 70px;
     height: 70px;
     transition: transform 0.3 ease;
+    border-radius: 8px;
+}
+
+.controls button:hover {
+    color: #f8e390;
 }
 
 .controls button:hover img {
     transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 /* copyright */
@@ -129,7 +141,7 @@ header {
     text-align: center;
     font-size: 0.9rem;
     font-family: "Old Standard TT", sans-serif;
-    padding: 20px 0;
+    padding: 35px 0;
     border-top: 2px solid #333;
 }
 
